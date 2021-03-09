@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'JetBrainsMono NF';
+  src: url("/fonts/JetBrains Mono Regular Nerd Font Complete.ttf");
+}
+
+*{
+  box-sizing: border-box;
+}
+html, body{
+  width: 100vw;
+  height: 100vh;
+}
+body{
+  margin: 0;
+  background: #ABB8C3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #CFCEC1;
+}
+.regular-text{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.chat-outer{
+  width: 60%;
+  height: 70%;
+  background: #151718;
+  border-radius: 15px;
+  box-shadow: 20px 20px 50px 0 rgba(46, 49, 53, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.top-bar{
+  padding: 1em 1.25em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  flex: 1;
+  * {
+    display: inline;
+  }
+  .roomName{
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #484848;
+  }
+  svg{
+    position: absolute;
+    left: 1em;
+  }
+}
+.chat{
+  flex: 20;
+  width: 95%;
+  font-family: "JetBrainsMono NF", monospace;
+}
+.msg-input{
+  flex: 2;
+  width: 95%;
+  border-top: 2px solid #292929;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  .username-input{
+    font-family: "JetBrainsMono NF", monospace;
+    color: #F8E81C;
+    margin: 0 .5em 0 0;
+  }
+  label{
+    width: 100%;
+  }
+  input{
+    background: none;
+    border: none;
+    width: 100%;
+    color: #cbcbcb;
+    font-size: 16px;
+    font-family: "JetBrainsMono NF", monospace;
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .chat-outer{
+    width: 90%;
+    height: 95%;
+  }
+}
+@media screen and (max-width: 500px){
+  .chat-outer{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
