@@ -11,3 +11,26 @@ server.listen(PORT, () => {
 });
 
 app.use(express.static(path.join(__dirname, "public")));
+
+
+io.on('connection', (socket) => {
+    let addedUser = false;
+
+    socket.on('createRoom', (username) => {
+        if (addedUser) return;
+        socket.username = username;
+        addedUser = true;
+        const roomID = generateRoomID(7);
+        socket.join(roomID);
+    });
+
+});
+
+function generateRoomID(len) {
+    let res = '';
+    let pool = 'abcdefghijklmnopqrstuvwxyz';
+    for (let i = 0; i < len; i++) {
+        res += pool.charAt(Math.floor(Math.random() * pool.length));
+    }
+    return res;
+}

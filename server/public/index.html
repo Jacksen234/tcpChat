@@ -6,16 +6,145 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <script src="https://kit.fontawesome.com/bd7be60cf7.js"></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="client.js" defer></script>
 </head>
 <body>
-    <div class="chat-outer">
+    <div class="input-panel content-container" id="input-panel">
+        <div class="warning" id="warning-login">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p id="warning-text"></p>
+        </div>
+        <div class="top-bar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewBox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg>
+        </div>
+        <div class="input-form-container">
+            <div class="username-input">
+                <label for="username">Enter username: </label>
+                <input id="username" type="text" placeholder="Enter here..." autocomplete="off">
+            </div>
+            <div class="room-selection">
+                <div class="join-room">
+                    <p class="form-title">Join a room</p>
+                    <label for="room-id">Room ID:</label>
+                    <input type="text" id="room-id" placeholder="Enter here..."><br>
+                    <button class="room-btn" id="join-room">Join</button>
+                </div>
+                <div class="create-room">
+                    <p class="form-title">Create a room</p>
+                    <button class="room-btn" id="create-room">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-outer content-container" id="chat-panel">
         <div class="top-bar">
             <svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewBox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg>
             <p class="roomName regular-text">Chat Room #1</p>
         </div>
         <div class="chat">
-            <div class="msg-line">
-                <span>jacques@chatroom: </span><span>Hallo ihr fetten looool</span>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+               <p class="msg-text">
+                   <span class="username-received">jacques@chatroom: </span>
+                   <span class="message-content">Hallo ihr fetten looool</span>
+               </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line sent">
+                <p class="msg-text">
+                    <span>Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
+            </div>
+            <div class="msg-line received">
+                <p class="msg-text">
+                    <span class="username-received">jacques@chatroom: </span>
+                    <span class="message-content">Hallo ihr fetten looool</span>
+                </p>
             </div>
         </div>
         <div class="msg-input">
