@@ -49,3 +49,12 @@ function showWarning(warn) {
         warningContainer.style.display = 'none';
     }, 3000);
 }
+
+socket.on('tooManyRooms', () => {
+    showWarning('Too many rooms');
+});
+
+socket.on('joinRoom', () => {
+    inputPanel.style.display = 'none';
+    chatPanel.style.display = 'flex'
+});

@@ -5,6 +5,8 @@ const io = require('socket.io')(server);
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
+const maxRooms = 10;
+let activeRooms = 0;
 
 server.listen(PORT, () => {
     console.log(`TCP Socket listening on port ${PORT}...`);
@@ -18,10 +20,15 @@ io.on('connection', (socket) => {
 
     socket.on('createRoom', (username) => {
         if (addedUser) return;
+        if(activeRooms >= maxRooms){
+            return socket.emit('tooManyRooms');
+        }
         socket.username = username;
         addedUser = true;
         const roomID = generateRoomID(7);
         socket.join(roomID);
+        activeRooms++;
+        socket.emit('joinRoom');
     });
 
 });
