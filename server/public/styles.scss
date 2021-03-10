@@ -96,8 +96,25 @@ body{
     color: #7948B9;
   }
 }
-.sent{
+.center{
+  text-align: center;
+}
+.right{
   text-align: right;
+}
+.msg-line{
+  .info{
+    font-style: italic;
+    opacity: .5;
+  }
+  .user-joined{
+    font-weight: 600;
+    color: #50FA7B;
+  }
+  .user-left{
+    font-weight: 600;
+    color: #FF5555;
+  }
 }
 .input-panel{
   position: relative;

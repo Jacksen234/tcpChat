@@ -50,6 +50,7 @@ body {
   align-items: center;
   position: relative;
   flex: 1;
+  width: 100%;
 }
 .top-bar * {
   display: inline;
@@ -105,8 +106,25 @@ body {
   color: #7948B9;
 }
 
-.sent {
+.center {
+  text-align: center;
+}
+
+.right {
   text-align: right;
+}
+
+.msg-line .info {
+  font-style: italic;
+  opacity: 0.5;
+}
+.msg-line .user-joined {
+  font-weight: 600;
+  color: #50FA7B;
+}
+.msg-line .user-left {
+  font-weight: 600;
+  color: #FF5555;
 }
 
 .input-panel {

@@ -25,17 +25,20 @@ io.on('connection', (socket) => {
         }
         socket.username = username;
         addedUser = true;
-        const roomID = generateRoomID(7);
+        const roomID = generateRoomID(3);
         socket.join(roomID);
         activeRooms++;
-        socket.emit('joinRoom');
+        socket.emit('joinRoom', {
+            roomID,
+            username: socket.username
+        });
     });
 
 });
 
 function generateRoomID(len) {
-    let res = '';
-    let pool = 'abcdefghijklmnopqrstuvwxyz';
+    let res = 'tcp';
+    let pool = '0123456789';
     for (let i = 0; i < len; i++) {
         res += pool.charAt(Math.floor(Math.random() * pool.length));
     }
