@@ -31,7 +31,7 @@ body{
   box-shadow: 20px 20px 50px 0 rgba(46, 49, 53, 0.8);
 }
 .chat-outer{
-  display: none; /*flex*/
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -76,6 +76,7 @@ body{
     font-family: "JetBrainsMono NF", monospace;
     color: rgb(52, 183, 255);
     margin: 0 .5em 0 0;
+    white-space: nowrap;
   }
   label{
     width: 100%;
@@ -101,6 +102,9 @@ body{
 }
 .right{
   text-align: right;
+  p{
+    margin-right: 1em;
+  }
 }
 .msg-line{
   .info{
@@ -114,6 +118,9 @@ body{
   .user-left{
     font-weight: 600;
     color: #FF5555;
+  }
+  .timestamp-received{
+    font-size: 12px;
   }
 }
 .input-panel{
@@ -197,7 +204,7 @@ body{
   }
 }
 
-@media screen and (max-width: 800px){
+@media only screen and (max-width: 800px){
   .chat-outer, .input-panel{
     width: 90%;
     height: 95%;
@@ -212,10 +219,13 @@ body{
     }
   }
 }
-@media screen and (max-width: 500px){
+@media only screen and (max-width: 500px){
   .chat-outer, .input-panel{
     width: 100%;
     height: 100%;
     border-radius: 0;
+  }
+  .msg-input{
+    margin-bottom: 6em;
   }
 }

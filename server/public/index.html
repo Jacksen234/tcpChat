@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>TCP Chat App</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
@@ -44,105 +45,13 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewBox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg>
             <p class="roomName regular-text" id="room-id-display"></p>
         </div>
-        <div class="chat">
-            <div class="msg-line received">
-                <p class="msg-text">
-                    <span class="username-received">jacques@chatroom: </span>
-                    <span class="message-content">Hallo ihr fetten looool</span>
-                </p>
-            </div>
-            <div class="msg-line received">
-                <p class="msg-text">
-                    <span class="username-received">jacques@chatroom: </span>
-                    <span class="message-content">Hallo ihr fetten looool</span>
-                </p>
-            </div>
-            <div class="msg-line received">
-                <p class="msg-text">
-                    <span class="username-received">jacques@chatroom: </span>
-                    <span class="message-content">Hallo ihr fetten looool</span>
-                </p>
-            </div>
-            <div class="msg-line received">
-                <p class="msg-text">
-                    <span class="username-received">jacques@chatroom: </span>
-                    <span class="message-content">Hallo ihr fetten looool</span>
-                </p>
-            </div>
-            <div class="msg-line received">
-                <p class="msg-text">
-                    <span class="username-received">jacques@chatroom: </span>
-                    <span class="message-content">Hallo ihr fetten looool</span>
-                </p>
-            </div>
-            <div class="msg-line received">
-                <p class="msg-text">
-                    <span class="username-received">jacques@chatroom: </span>
-                    <span class="message-content">Hallo ihr fetten looool</span>
-                </p>
-            </div>
-            <div class="msg-line received">
-                <p class="msg-text">
-                    <span class="username-received">jacques@chatroom: </span>
-                    <span class="message-content">Hallo ihr fetten looool</span>
-                </p>
-            </div>
-            <div class="msg-line center">
-                <p class="msg-text">
-                    <span class="user-left">Herr Lo left</span> <span class="info"> -> 4 participants remaining</span>
-                </p>
-            </div>
-            <div class="msg-line received">
-                <p class="msg-text">
-                    <span class="username-received">jacques@chatroom: </span>
-                    <span class="message-content">Hallo ihr fetten looool</span>
-                </p>
-            </div>
-            <div class="msg-line received">
-                <p class="msg-text">
-                    <span class="username-received">jacques@chatroom: </span>
-                    <span class="message-content">Hallo ihr fetten looool</span>
-                </p>
-            </div>
-            <div class="msg-line received">
-                <p class="msg-text">
-                    <span class="username-received">jacques@chatroom: </span>
-                    <span class="message-content">Hallo ihr fetten looool</span>
-                </p>
-            </div>
-            <div class="msg-line received">
-               <p class="msg-text">
-                   <span class="username-received">jacques@chatroom: </span>
-                   <span class="message-content">Hallo ihr fetten looool</span>
-               </p>
-            </div>
-            <div class="msg-line center">
-                <p class="msg-text">
-                    <span class="user-joined">Herr Lo joined</span> <span class="info"> -> Currently 5 participants</span>
-                </p>
-            </div>
-            <div class="msg-line received">
-                <p class="msg-text">
-                    <span class="username-received">jacques@chatroom: </span>
-                    <span class="message-content">Hallo ihr fetten looool</span>
-                </p>
-            </div>
-            <div class="msg-line received">
-                <p class="msg-text">
-                    <span class="username-received">jacques@chatroom: </span>
-                    <span class="message-content">Hallo ihr fetten looool</span>
-                </p>
-            </div>
-            <div class="msg-line right">
-                <p class="msg-text">
-                    <span class="sent">Hallo ihr fetten looool</span>
-                </p>
-            </div>
+        <div class="chat" id="chat-container">
+
         </div>
         <div class="msg-input">
             <p class="username-input" id="own-username"></p>
             <label>
-                <input type="text" placeholder="Type here..." maxlength="200">
+                <input type="text" placeholder="Type here..." maxlength="200" id="message-input">
             </label>
         </div>
     </div>

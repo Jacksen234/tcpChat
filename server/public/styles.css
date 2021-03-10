@@ -36,7 +36,6 @@ body {
 
 .chat-outer {
   display: none;
-  /*flex*/
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -85,6 +84,7 @@ body {
   font-family: "JetBrainsMono NF", monospace;
   color: #34b7ff;
   margin: 0 0.5em 0 0;
+  white-space: nowrap;
 }
 .msg-input label {
   width: 100%;
@@ -113,6 +113,9 @@ body {
 .right {
   text-align: right;
 }
+.right p {
+  margin-right: 1em;
+}
 
 .msg-line .info {
   font-style: italic;
@@ -125,6 +128,9 @@ body {
 .msg-line .user-left {
   font-weight: 600;
   color: #FF5555;
+}
+.msg-line .timestamp-received {
+  font-size: 12px;
 }
 
 .input-panel {
@@ -209,7 +215,7 @@ body {
   margin: 0.2em 0;
 }
 
-@media screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
   .chat-outer, .input-panel {
     width: 90%;
     height: 95%;
@@ -223,11 +229,15 @@ body {
     margin-bottom: 2em;
   }
 }
-@media screen and (max-width: 500px) {
+@media only screen and (max-width: 500px) {
   .chat-outer, .input-panel {
     width: 100%;
     height: 100%;
     border-radius: 0;
+  }
+
+  .msg-input {
+    margin-bottom: 6em;
   }
 }
 
